@@ -29,9 +29,9 @@ namespace MyLib
         {
             double sum = 0;
 
-            for (int i=0; i<n+1; i++)
+            for (int i=0; i<n; i++)
             {
-                double a = Math.Pow(-1, n) * (1 / Math.Pow(2, n));
+                double a = Math.Pow(-1, i) * (1 / Math.Pow(2, i));
 
                 sum = sum + a;
             }
@@ -52,10 +52,10 @@ namespace MyLib
             int F = 1;
             int n = 1;
 
-            while (a > eps)
+            while (Math.Abs(a) > eps)
             {
                 F = F * n;
-                a = Math.Pow(-1, n) * (1 / (F * z));
+                a = Math.Pow(-1, n) * (1 / (double)(F * z));
                 sum = sum + a;
                 n = n + 1;
             }
