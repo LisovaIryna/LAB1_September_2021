@@ -38,7 +38,7 @@ namespace Console_Variant15
             if (number_days < 0)
             {
                 Console.WriteLine(" │");
-                Console.WriteLine(" │");
+                Console.WriteLine(" │" + UNDERLINE + "Result" + RESET);
                 Console.WriteLine(" │A number equal to or greater than zero must be entered.");
                 Console.WriteLine(" │Press \"Enter\" and the program will shut down.");
 
@@ -47,7 +47,47 @@ namespace Console_Variant15
                 Environment.Exit(0);
             }
             double week_count = MyLib.LibraryMethods.Week_count(number_days);
+            Console.WriteLine(" │");
+            Console.WriteLine(" │" + UNDERLINE + "Result" + RESET);
             Console.WriteLine(" │Number of full weeks: " + week_count);
+            Console.WriteLine(" └───────────────────────────────────────────────────────────────────────────────────────────");
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            Console.WriteLine(" ┌───────────────────────────────────────────────────────────────────────────────────────────");
+            Console.WriteLine(" │" + UNDERLINE + "Task 2" + RESET);
+            Console.WriteLine(" │");
+            Console.WriteLine(" │");
+            Console.WriteLine(" │" + UNDERLINE + "Incoming data" + RESET);
+            Console.Write(" │Enter the number of members of the series:");
+            int n;
+            if (!Int32.TryParse(Console.ReadLine(), out n))
+            {
+                Console.WriteLine(" │");
+                Console.WriteLine(" │" + UNDERLINE + "Result" + RESET);
+                Console.WriteLine(" │Incorrect input. An integer must be entered.");
+                Console.WriteLine(" │Press \"Enter\" and the program will shut down.");
+
+                Console.WriteLine(" └───────────────────────────────────────────────────────────────────────────────────────────");
+                Console.ReadKey();
+                Environment.Exit(0);
+            }
+            if (n < 0)
+            {
+                Console.WriteLine(" │");
+                Console.WriteLine(" │" + UNDERLINE + "Result" + RESET);
+                Console.WriteLine(" │A number equal to or greater than zero must be entered.");
+                Console.WriteLine(" │Press \"Enter\" and the program will shut down.");
+
+                Console.WriteLine(" └───────────────────────────────────────────────────────────────────────────────────────────");
+                Console.ReadKey();
+                Environment.Exit(0);
+            }
+            double sum = MyLib.LibraryMethods.Sum_series(n);
+            Console.WriteLine(" │");
+            Console.WriteLine(" │" + UNDERLINE + "Result" + RESET);
+            Console.WriteLine(" │The amount of the series: " + sum);
             Console.WriteLine(" └───────────────────────────────────────────────────────────────────────────────────────────");
         }
     }
